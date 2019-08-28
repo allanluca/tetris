@@ -1,30 +1,13 @@
-#include <stdio.h>
-#include <stdlib.h>
-#define  COLLUMNS 60
-#define ROWS 25
+/*
+jogo tetris implementado em linguagem C para o uso no terminal de comando 
+para executar:
+Autor: Allan Lucas Andrade Bomfim
+Data: 28/08/2019
+*/
+
+#include "Tetris.h"
 
 
-void init(char matrix[ROWS][COLLUMNS]){
-    int i,j;
-
-    for(i=0; i<ROWS; i++)
-    {
-        for(j=0; j<COLLUMNS; j++)
-        {
-            matrix[i][j]= ' ';
-
-        }
-    }
-}
-void printMatrix(char matrix[ROWS][COLLUMNS]){
-    int i ,j;
-    for(i=0;i<ROWS;i++){
-        for(j=0; j <COLLUMNS; j++){
-            printf("%c", matrix[i][j]);
-        }
-        printf("\n");
-    }
-}
 int main(){
     char matrix[ROWS][COLLUMNS];
     int posI, posJ;
@@ -42,7 +25,7 @@ int main(){
 
         if( posJ < COLLUMNS) posJ++;
         
- }
+     }
     system("pause");
     return 0;
 }
