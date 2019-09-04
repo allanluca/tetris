@@ -27,5 +27,6 @@ void printMatrix(char matrix[ROWS][COLLUMNS]){
             printf("%c", matrix[i][j]);
         }
         printf("\n");
+
     }
 }
