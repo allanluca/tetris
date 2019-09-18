@@ -5,28 +5,47 @@ Data: 28/08/2019
 */
 #include "Tetris.h"
 
-/* Inicializa a matriz princial com espaço vazio */
-void init(char matrix[ROWS][COLLUMNS]){
+/*
+    Inicializa a matriz principal com 'espaços vazios'
+*/
+void init(char matrix[ROWS][COLUMNS]){
     int i,j;
 
-    for(i=0; i<ROWS; i++)
-    {
-        for(j=0; j<COLLUMNS; j++)
-        {
-            matrix[i][j]= ' ';
-
+    for(i=0; i<ROWS; i++){
+        for(j=0; j<COLUMNS; j++){
+            matrix[i][j] = ' ';
         }
     }
 }
 
-/* Mostra o conteudo da matris principal na tela do computador */
-void printMatrix(char matrix[ROWS][COLLUMNS]){
-    int i ,j;
-    for(i=0;i<ROWS;i++){
-        for(j=0; j <COLLUMNS; j++){
+/*
+    Mostra o conteúdo da matriz principal na tela 
+    do computador.
+*/
+void printMatrix(char matrix[ROWS][COLUMNS]){
+    int i,j;
+
+    printf("\t\t\t");
+    //Linha de cima
+    for(j=0; j<COLUMNS+2; j++){
+        printf("*");
+    }
+    printf("\n");
+
+    //Matriz do jogo
+    for(i=0; i<ROWS; i++){        
+        printf("\t\t\t*");
+        for(j=0; j<COLUMNS; j++){
             printf("%c", matrix[i][j]);
         }
-        printf("\n");
-
+        printf("*\n");
     }
+
+    printf("\t\t\t");
+    //Linha de baixo
+    for(j=0; j<COLUMNS+2; j++){
+        printf("*");
+    }
+    printf("\n");
+
 }

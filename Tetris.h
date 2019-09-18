@@ -6,13 +6,18 @@ Data: 28/08/2019
 
 #include <stdio.h>
 #include <stdlib.h>
-/*Configurações das dimenssões de linha*/
-#define  COLLUMNS 60
+//Configuração das dimensões da matriz principal do jogo
+#define COLUMNS 60
 #define ROWS 25
 
-/* Inicializa a matriz princial com espaço vazio */
-void printMatrix(char matrix[ROWS][COLLUMNS]);
+/*
+    Inicializa a matriz principal com 'espaços vazios'
+*/
+void init(char matrix[ROWS][COLUMNS]);
 
-/* Mostra o conteudo da matris principal na tela do computador */
-void init(char matrix[ROWS][COLLUMNS]);
+/*
+    Mostra o conteúdo da matriz principal na tela 
+    do computador.
+*/
+void printMatrix(char matrix[ROWS][COLUMNS]);
 
