@@ -19,8 +19,8 @@ Data: 28/08/2019
 #define RIGHT 77
 #define TECLA_A 97
 #define TECLA_D 100
-
-
+#define tecla_a 65
+#define tecla_d 68
 
 /*
     Inicializa a matriz principal com 'espaços vazios'
