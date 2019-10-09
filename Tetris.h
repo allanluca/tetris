@@ -22,6 +22,38 @@ Data: 28/08/2019
 #define tecla_a 65
 #define tecla_d 68
 
+// ORIENTAÇÕE PARA AS APEÇAS
+#define ORIENTACAO_UP 1
+#define ORIENTACAO_down 2
+#define ORIENTACAO_LEFT 3
+#define ORIENTACAO_RIGHT 4
+
+//CRIANDO TIPOS DE PEÇAS
+#define TIPO_L 1
+#define TIPO_L_R 2 //L  reverso
+#define TIPO_T 3
+#define TIPO_Z 4
+#define TIPO_Z_R 5 //Z reverso
+#define TIPO_O 6   // quadrado
+#define TIPO_I 7
+
+//configurações de layout
+#define PIXEL 219
+#define EMPTY 32
+
+// estrutura padrão de componente
+typedef struct 
+{
+    int i;              // posição nas linhas na matriz
+    int j;                   //       posição linhas colunas
+    int orientacao;          //   orientação da peças
+    int tipo;              // o tipo de peça (7 posição)
+    int width;          //            largura
+    int height;        // altura
+}Bloco;
+
+
+
 /*
     Inicializa a matriz principal com 'espaços vazios'
 */
