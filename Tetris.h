@@ -22,10 +22,12 @@ Data: 28/08/2019
 #define tecla_a 65
 #define tecla_d 68
 
+#define tecla_Espaco 32
+
 // ORIENTAÇÕE PARA AS APEÇAS
 #define ORIENTACAO_UP 1
-#define ORIENTACAO_down 2
-#define ORIENTACAO_LEFT 3
+#define ORIENTACAO_LEFT 2
+#define ORIENTACAO_down 3
 #define ORIENTACAO_RIGHT 4
 
 //CRIANDO TIPOS DE PEÇAS
@@ -64,4 +66,8 @@ void init(char matrix[ROWS][COLUMNS]);
     do computador.
 */
 void printMatrix(char matrix[ROWS][COLUMNS]);
+
+/* desenhar uma barra usando o simbolo do caracter ASCII passando por parrametro.*/
+
+void drawBar(char matrix [ROWS][COLUMNS],Bloco barra, int simbolo);
 

@@ -1,1 +1,1 @@
-gcc main.c tetris.c display.c -o programa
+gcc main.c Tetris.c display.c -o programa

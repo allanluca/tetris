@@ -18,7 +18,7 @@ int main(){
     tijolo.i = 0;
     tijolo.j = COLUMNS/2;
     tijolo.tipo = TIPO_I;
-    tijolo.orientacao = ORIENTACAO_UP;
+    tijolo.orientacao = ORIENTACAO_LEFT;
     tijolo.width= 1;
     tijolo.height= 2;
     
@@ -37,29 +37,19 @@ int main(){
             printf("@= (%d, %d)\n",tijolo.i, tijolo.j);
         #endif
 
-        //posicionar o @ no meio da tela
-        switch (tijolo.orientacao)
-        {
-        case ORIENTACAO_UP:   
-        if(tijolo.i-3>=0) matrix[tijolo.i-3][tijolo.j] = PIXEL;
-        if(tijolo.i-2>=0) matrix[tijolo.i-2][tijolo.j] = PIXEL;
-        if(tijolo.i-1>=0) matrix[tijolo.i-1][tijolo.j] = PIXEL;
-        matrix[tijolo.i][tijolo.j] = PIXEL;
-        break;
-        case  ORIENTACAO_LEFT:
-                // outra orientação de desenho
-            break;
-        }
+        //posicionar o @ no meio da tela 
+        drawBar(matrix, tijolo, PIXEL);
+        
 
 
         //mostro a matriz na tela
         printMatrix(matrix);
 
         //faça posição anterior do @ ser apagada
-        if(tijolo.i-3>=0) matrix[tijolo.i-3][tijolo.j] = EMPTY;
-        if(tijolo.i-2>=0) matrix[tijolo.i-2][tijolo.j] = EMPTY;
-        if(tijolo.i-1>=0) matrix[tijolo.i-1][tijolo.j] = EMPTY;
-        matrix[tijolo.i][tijolo.j] = EMPTY;
+        
+
+        drawBar(matrix, tijolo, EMPTY);
+       
         
         //faço a posição da @ ir para a direita
         if(tijolo.i < (ROWS-1)) tijolo.i++;
@@ -81,6 +71,12 @@ int main(){
             case RIGHT: 
             if(tijolo.j < (COLUMNS-1)) tijolo.j++;//vai para direita
             break; 
+            case tecla_Espaco:
+            if (tijolo.orientacao== ORIENTACAO_RIGHT)
+            tijolo.orientacao=ORIENTACAO_UP;
+                else
+                tijolo.orientacao++;
+
         }
         
     }
