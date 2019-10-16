@@ -10,7 +10,7 @@ Data: 28/08/2019
 
 //Configuração das dimensões da matriz principal do jogo
 #define COLUMNS 60
-#define ROWS 25
+#define ROWS 40
 
 // configura o teclado
 #define ESC 27
