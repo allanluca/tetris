@@ -7,7 +7,7 @@ Data: 28/08/2019
 
 #include "Tetris.h"
 #include "display.h"
-#define  DEBUG 0
+#define  DEBUG 1
 
 int main(){
     char matrix[ROWS][COLUMNS];
@@ -19,8 +19,10 @@ int main(){
     tijolo.j = COLUMNS/2;
     tijolo.tipo = TIPO_I;
     tijolo.orientacao = ORIENTACAO_LEFT;
-    tijolo.width= 5;
-    tijolo.height= 5;
+    tijolo.width= 1;
+    tijolo.height= 4;
+    tijolo.width=5;
+    tijolo.height=1;
     
     //inicializando matriz
     init(matrix);
