@@ -10,7 +10,7 @@ Data: 28/08/2019
 
 //Configuração das dimensões da matriz principal do jogo
 #define COLUMNS 30
-#define ROWS 60
+#define ROWS 30
 
 
 
@@ -47,11 +47,11 @@ Data: 28/08/2019
 // estrutura padrão de componente
 typedef struct 
 {
-    int i;              // posição nas linhas na matriz
-    int j;                   //       posição linhas colunas
-    int orientacao;          //   orientação da peças
-    int tipo;              // o tipo de peça (7 posição)
-    int width;          //            largura
+    int i;             // posição nas linhas na matriz
+    int j;             // posição linhas colunas
+    int orientacao;    // orientação da peças
+    int tipo;          // o tipo de peça (7 posição)
+    int width;         // largura
     int height;        // altura
 }Bloco;
 
