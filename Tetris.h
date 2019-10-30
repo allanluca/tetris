@@ -72,3 +72,6 @@ void printMatrix(char matrix[ROWS][COLUMNS]);
 
 void drawBar(char matrix [ROWS][COLUMNS],Bloco barra, int simbolo);
 
+/*inicializar função.*/
+void initBar(Bloco barra);
+
