@@ -70,8 +70,57 @@ void drawBar(char matrix[ROWS][COLUMNS],Bloco barra, int simbolo){
                 if(barra.j-1>=0) matrix[barra.i][barra.j-1] = simbolo;
                 matrix[barra.i][barra.j] = simbolo;
          break;
-        }
-    
+        }   
+}
 
-    
+/*
+    Inicializar a peça do tipo barra
+*/
+void initBar(Bloco *barra){
+    barra->i = 0;
+    barra->j = COLUMNS/2;
+    barra->tipo = TIPO_I;
+    barra->orientacao = ORIENTACAO_LEFT;
+    barra->width = 5;
+    barra->height = 1;
+
+    #if DEBUG == 1
+        printf("posI: %d  posJ: %d \n", barra->i, barra->j);
+        system("pause");
+    #endif
+}
+
+/*
+    Rotaciona blocos do jogo
+*/
+void rotate(Bloco *bloco){
+    if(bloco->orientacao==ORIENTACAO_RIGHT)
+        bloco->orientacao = ORIENTACAO_UP;
+    else
+        bloco->orientacao++;
+
+    //inverte as dimensões do tijolo
+    int aux = bloco->width;
+    bloco->width = bloco->height;
+    bloco->height = aux;
+
+    //resolvendo bug dos cantos
+    if(bloco->j < (bloco->width/2))
+        bloco->j = bloco->width/2;
+    else if(bloco->j > COLUMNS - (bloco->width/2) - 1)
+        bloco->j = COLUMNS - (bloco->width/2) - 1;
+
+}
+
+/*
+    Verifica a colisão de blocos
+*/
+int collisionDetect(char matrix[ROWS][COLUMNS], Bloco barra){
+    int retorno = 0;
+
+    //colisão com a base
+    if((barra.i + barra.height/2) >= (ROWS-1))
+        retorno = 1;
+
+    return retorno;
 }
