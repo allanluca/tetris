@@ -61,16 +61,12 @@ int main(){
             case (int)'a':
             case (int)'A':
             case LEFT: 
-                if((tijolo.j - (tijolo.width/2)) > 0) 
-                if(matrix[tijolo.i][tijolo.j - (tijolo.width/2) - 1]== EMPTY) //vai para esquerda
-                tijolo.j --;
+                 if((tijolo.j - (tijolo.width/2)) > 0) tijolo.j--; //vai para esqu
             break; 
             case TECLA_D:
             case tecla_d:
             case RIGHT: 
-                if((tijolo.j + (tijolo.width/2)) < (COLUMNS-1)) 
-                if(matrix [tijolo.i][tijolo.j + (tijolo.width/2)+1]== EMPTY //vai para a direita 
-                tijolo.j++;
+                if((tijolo.j + (tijolo.width/2)) < (COLUMNS-1)) tijolo.j++; //va
             break; 
             case tecla_Espaco:
                 rotate(&tijolo);
